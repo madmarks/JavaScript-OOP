@@ -8,8 +8,23 @@
 
 */
 
-function sum() {
-	
+function sum(array) {
+    "use strict";
+
+    if (!arguments.length) {
+        throw Error;
+    } else if (!array.length) {
+        return null;
+    }
+
+    return array.reduce(function (sum, item) {
+
+        if (isNaN(item)) {
+            throw Error;
+        }
+
+        return (sum + +item);
+    }, 0);
 }
 
 module.exports = sum;
