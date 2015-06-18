@@ -19,7 +19,6 @@ function findPrimes(from, to) {
     }
 
     function isPrime(number) {
-        "use strict";
 
         var divisor = 2,
             len = Math.sqrt(number);
@@ -31,6 +30,7 @@ function findPrimes(from, to) {
         }
 
         //for (divisor = 2, len = Math.sqrt(number) ; divisor <= len; divisor += 1) {
+        //
         //    if(!(number % divisor))
         //    {
         //        return false;
@@ -38,12 +38,14 @@ function findPrimes(from, to) {
         //}
 
         while (divisor <= Math.sqrt(number)) {
+
             if (!(number % divisor)) {
                 return false;
             }
 
             divisor += 1;
         }
+
         return true;
     }
 
